@@ -1,0 +1,16 @@
+<div class="login-container">
+	<a 
+		[routerLink]="['/about']">
+		About
+	</a>
+	{{debugOutput}}
+	<label>Username: <input #username type="text" name="username"></label>
+	<br>
+	<label>Password: <input #password type="text" name="password"></label>
+	<br>
+	<button (click)="submitLogin(username.value, password.value)">Login</button>
+	<a 
+		[routerLink]="['/pricing']">
+		Pricing
+	</a>
+</div>
