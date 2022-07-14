@@ -1,16 +1,20 @@
 <div class="login-container">
-	<a 
-		[routerLink]="['/about']">
-		About
-	</a>
-	{{debugOutput}}
-	<label>Username: <input #username type="text" name="username"></label>
-	<br>
-	<label>Password: <input #password type="text" name="password"></label>
-	<br>
-	<button (click)="submitLogin(username.value, password.value)">Login</button>
-	<a 
-		[routerLink]="['/pricing']">
-		Pricing
-	</a>
+	<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+	<p>{{debugOutput}}</p>
+		<div>
+			<label for="userName">
+				User Name:
+			</label>
+			<input id="userName" type="text" formControlName="userName">
+		</div>
+
+		<div>
+			<label for="password">
+				Password:
+			</label>
+			<input id="password" type="text" formControlName="password">
+		</div>
+		
+		<button class="button" type="submit">Login</button>
+	</form>
 </div>

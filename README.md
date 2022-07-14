@@ -1,13 +1,17 @@
 # Getting started
 
-Install node.exe.
-Start command line.
-Add angular to node.exe by typing: npm install -g @angular/cli
-Navigate to the project root folder: cd C:/<the_path_to_protype-credit-builder>/prototype-credit-builder
-Start the project: ng serve
-page url: localhost:4200
-username: user
-password: pass
+Installation:
+	Install node.exe.
+	Start command line.
+	Add angular to node.exe by typing: npm install -g @angular/cli
+
+Deploying App:
+	Start command line.
+	Navigate to the project root folder.
+	Start the project: ng serve
+	page url: localhost:4200
+	username: user
+	password: pass
 
 # How to modify
 

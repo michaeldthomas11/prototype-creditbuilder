@@ -6,5 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'prototype-credit-builder';
+  /*access = true;
+  component = '<app-login></app-login>';
+  
+  canAccess() {
+	if (this.access)
+	{
+	  this.component = '<app-pricing></app-pricing>';
+	}
+	else
+	{
+	  this.component = this.access+'a<app-login></app-login>';
+	}
+  }*/
 }

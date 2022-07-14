@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormsModule, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -6,26 +8,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-	userName = '';
-	password = '';
+	loginForm = this.formBuilder.group({
+      userName: '',
+      password: ''
+    });
 	debugOutput = '';
 
-  constructor() { }
+  constructor(
+    private formBuilder: FormBuilder,
+  ) { }
 
   ngOnInit(): void {
   }
   
-  submitLogin(userName: string, password: string) {
-    this.userName = userName;
-	this.password = password;
-	if (this.userName !== 'user' || this.password !=='pass')
+  
+  onSubmit(): void {
+    if (this.loginForm.get('userName')?.value !== 'user' || this.loginForm.get('password')?.value !== 'pass')
 	{
-		this.debugOutput = '<p>Error: The inputted username and password is invalid.</p>';
+		this.debugOutput = 'Error: The inputted username and password is invalid.';
 	}
 	else
 	{
-		this.debugOutput = '<p>The password is correct.</p>';
+		this.debugOutput = 'The password is correct.';
 	}
+    this.loginForm.reset();
   }
-
 }
